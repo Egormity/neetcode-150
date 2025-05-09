@@ -104,3 +104,8 @@
 //         ["9", ".", ".", ".", ".", ".", ".", ".", "."],
 //     ])
 // );
+
+// ------------------------- # 8. 2025.05.09 - 1:27:12 | Leetcode 271 - Encode and Decode Strings - Medium ------------------------- //
+const divisor = "/#@";
+const encode = (strs) => strs.join(divisor);
+const decode = (str) => str.split(divisor);
