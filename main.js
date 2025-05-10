@@ -109,3 +109,42 @@
 const divisor = "/#@";
 const encode = (strs) => strs.join(divisor);
 const decode = (str) => str.split(divisor);
+
+// ---- # 9. 2025.05.10 - [1:35:32](https://www.youtube.com/watch?v=T0u5nwSA0w0&t=5732s) | Leetcode 128 - Longest Consecutive Sequence - Medium --- //
+// My solution - optimal
+//
+// /**
+//  * @param {number[]} nums
+//  * @return {number}
+//  */
+// var longestConsecutive = function(nums) {
+//     const sorted = nums.sort((a, b) => a - b);
+//     let maxCount = 0;
+//     let curCount = 1;
+//     for (let i = 0; i < sorted.length; i++) {
+//         const cur = sorted[i];
+//         const next = sorted[i + 1];
+//         if (cur === next) continue;
+//         if (cur + 1 === next) ++curCount;
+//         else curCount = 1;
+//         maxCount = Math.max(maxCount, curCount);
+//     };
+//     return maxCount;
+// };
+//
+// Hash set solution
+// var longestConsecutive = function(nums) {
+//     const obj = {};
+//     nums.forEach(num => (obj[num] = true));
+//     let maxCount = 0;
+//     for (cur in obj) {
+//         let curCount = 0;
+//         let num = +cur;
+//         while (num in obj) {
+//             curCount++;
+//             num++;
+//         }
+//         maxCount = Math.max(maxCount, curCount);
+//     };
+//     return maxCount;
+// };
