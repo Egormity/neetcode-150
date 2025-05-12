@@ -106,9 +106,9 @@
 // );
 
 // ------------------------- # 8. 2025.05.09 - 1:27:12 | Leetcode 271 - Encode and Decode Strings - Medium ------------------------- //
-const divisor = "/#@";
-const encode = (strs) => strs.join(divisor);
-const decode = (str) => str.split(divisor);
+// const divisor = "/#@";
+// const encode = (strs) => strs.join(divisor);
+// const decode = (str) => str.split(divisor);
 
 // ---- # 9. 2025.05.10 - [1:35:32](https://www.youtube.com/watch?v=T0u5nwSA0w0&t=5732s) | Leetcode 128 - Longest Consecutive Sequence - Medium --- //
 // My solution - optimal
