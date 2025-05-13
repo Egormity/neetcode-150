@@ -148,3 +148,34 @@
 //     };
 //     return maxCount;
 // };
+
+// ----- # 10. 2025.05.13 - [1:59:05](https://www.youtube.com/watch?v=T0u5nwSA0w0&t=7145s) | LeetCode 125 - Valid Palindrome - Easy ----- //
+/**
+ * @param {string} s
+ * @return {boolean}
+ */
+var isPalindrome = function (s) {
+    // 1.
+    // const sFromatted = s.replace(/[^a-zA-Z0-9]/g, "").toLowerCase();
+    // return sFromatted === sFromatted.split("").reverse().join("");
+    // 2.
+    // const sFromatted = s.replace(/[^a-zA-Z0-9]/g, "").toLowerCase();
+    // for (let i = 0; i < sFromatted.length; i++) {
+    //     if (sFromatted[i] !== sFromatted[sFromatted.length - 1 - i]) return false;
+    // }
+    // return true;
+    // 3.
+    // const alphabet = "abcdefghijklmnopqrstuvwxyz1234567890";
+    // let leftI = 0;
+    // let rightI = s.length - 1;
+    // while (leftI < rightI) {
+    //     while (!alphabet.includes(s[leftI].toLowerCase()) && leftI < rightI) leftI++;
+    //     while (!alphabet.includes(s[rightI].toLowerCase()) && leftI < rightI) rightI--;
+    //     //
+    //     if (s[leftI].toLowerCase() !== s[rightI].toLowerCase()) return false;
+    //     leftI++;
+    //     rightI--;
+    // }
+    // return true;
+};
+// console.log(isPalindrome("aaaaa"));
