@@ -179,3 +179,48 @@ var isPalindrome = function (s) {
     // return true;
 };
 // console.log(isPalindrome("aaaaa"));
+
+// ----- # 11. 2025.05.14 - [2:08:18](https://www.youtube.com/watch?v=T0u5nwSA0w0&t=7698s) | LeetCode 167 - Two Sum II - Input Array Is Sorted - medium ----- //
+// /**
+//  * @param {number[]} numbers
+//  * @param {number} target
+//  * @return {number[]}
+//  */
+// var twoSum = function (numbers, target) {
+//     const hashSet = {};
+//     for (let i = 0; i < numbers.length; i++) {
+//         const num = numbers[i];
+//         const pairNum = hashSet[target - num];
+//         if (pairNum !== undefined) return [pairNum + 1, i + 1];
+//         hashSet[num] = i;
+//     }
+//     return null;
+// };
+
+// # 12. 2025.05.15 - [2:20:52](https://www.youtube.com/watch?v=T0u5nwSA0w0&t=8452s) | leetCode 15 - 3 Sum - Medium
+/**
+ * @param {number[]} nums
+ * @return {number[][]}
+ */
+var threeSum = function (nums) {
+    nums.sort((a, b) => a - b);
+    const result = [];
+    for (let i = 0; i < nums.length && nums[i] <= 0; i++) {
+        if (i == 0 || nums[i] != nums[i - 1]) getSum(nums, i, result);
+    }
+    return result;
+};
+var getSum = function (nums, i, result) {
+    let left = i + 1;
+    let right = nums.length - 1;
+    while (left < right) {
+        const sum = nums[i] + nums[left] + nums[right];
+        if (sum < 0) left++;
+        else if (sum > 0) right--;
+        else if (sum === 0) {
+            result.push([nums[i], nums[left++], nums[right--]]);
+            while (left < right && nums[left] == nums[left - 1]) left++;
+        }
+    }
+};
+console.log(threeSum([-1, 0, 1, 2, -1, -4]));
