@@ -198,29 +198,76 @@ var isPalindrome = function (s) {
 // };
 
 // # 12. 2025.05.15 - [2:20:52](https://www.youtube.com/watch?v=T0u5nwSA0w0&t=8452s) | leetCode 15 - 3 Sum - Medium
+// /**
+//  * @param {number[]} nums
+//  * @return {number[][]}
+//  */
+// var threeSum = function (nums) {
+//     nums.sort((a, b) => a - b);
+//     const result = [];
+//     for (let i = 0; i < nums.length && nums[i] <= 0; i++) {
+//         if (i == 0 || nums[i] != nums[i - 1]) getSum(nums, i, result);
+//     }
+//     return result;
+// };
+// var getSum = function (nums, i, result) {
+//     let left = i + 1;
+//     let right = nums.length - 1;
+//     while (left < right) {
+//         const sum = nums[i] + nums[left] + nums[right];
+//         if (sum < 0) left++;
+//         else if (sum > 0) right--;
+//         else if (sum === 0) {
+//             result.push([nums[i], nums[left++], nums[right--]]);
+//             while (left < right && nums[left] == nums[left - 1]) left++;
+//         }
+//     }
+// };
+// console.log(threeSum([-1, 0, 1, 2, -1, -4]));
+
+// # 13. 2025.05.19 - [2:41:03](https://www.youtube.com/watch?v=T0u5nwSA0w0&t=9663s) | LeetCode 11 - Container With Most Water
+// /**
+//  * @param {number[]} height
+//  * @return {number}
+//  */
+// var maxArea = function (height) {
+//     // Brute force
+//     // let max = 0;
+//     // for (let i = 0; i < height.length; i++) {
+//     //     const first = height[i];
+//     //     for (let j = i + 1; j < height.length; j++) {
+//     //         const second = height[j];
+//     //         max = Math.max(max, Math.min(first, second) * (j - i));
+//     //     }
+//     // }
+//     // return max;
+
+//     // Optimal
+//     let leftI = 0;
+//     let rightI = height.length - 1;
+//     let max = 0;
+//     while (leftI < rightI) {
+//         const leftNum = height[leftI];
+//         const rightNum = height[rightI];
+//         max = Math.max(max, Math.min(leftNum, rightNum) * (rightI - leftI));
+//         if (leftNum < rightNum) leftI++;
+//         else rightI--;
+//     }
+//     return max;
+// };
+
+// # 15. 2025.05.20 - [3:22:30](https://www.youtube.com/watch?v=T0u5nwSA0w0&t=12150s) | LeetCode 121 - Best Time To Buy And Sell Stocks
 /**
- * @param {number[]} nums
- * @return {number[][]}
+ * @param {number[]} prices
+ * @return {number}
  */
-var threeSum = function (nums) {
-    nums.sort((a, b) => a - b);
-    const result = [];
-    for (let i = 0; i < nums.length && nums[i] <= 0; i++) {
-        if (i == 0 || nums[i] != nums[i - 1]) getSum(nums, i, result);
+var maxProfit = function (prices) {
+    let profit = 0;
+    let min = prices[0];
+    for (let i = 0; i < prices.length; i++) {
+        const price = prices[i];
+        if (price < min) min = price;
+        profit = Math.max(profit, price - min);
     }
-    return result;
+    return profit;
 };
-var getSum = function (nums, i, result) {
-    let left = i + 1;
-    let right = nums.length - 1;
-    while (left < right) {
-        const sum = nums[i] + nums[left] + nums[right];
-        if (sum < 0) left++;
-        else if (sum > 0) right--;
-        else if (sum === 0) {
-            result.push([nums[i], nums[left++], nums[right--]]);
-            while (left < right && nums[left] == nums[left - 1]) left++;
-        }
-    }
-};
-console.log(threeSum([-1, 0, 1, 2, -1, -4]));
