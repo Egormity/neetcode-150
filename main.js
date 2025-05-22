@@ -256,18 +256,67 @@ var isPalindrome = function (s) {
 //     return max;
 // };
 
+// # 14. 2025.05.22 - [2:55:39](https://www.youtube.com/watch?v=T0u5nwSA0w0&t=10539s) | LeetCode 42 - Trapping Rain Water - Hard
+// /**
+//  * @param {number[]} height
+//  * @return {number}
+//  */
+// var trap = function (height) {
+//     ///////////////////////// My solution (better than brute force)
+//     // const maxHeightLeft = {};
+//     // const maxHeighRight = {};
+//     // let maxLeft = 0;
+//     // let maxRight = 0;
+
+//     // for (let i = 0; i < height.length; i++) {
+//     //     const elLeft = height[i];
+//     //     maxLeft = Math.max(maxLeft, elLeft);
+//     //     maxHeightLeft[i] = maxLeft;
+
+//     //     const elRight = height[height.length - 1 - i];
+//     //     maxRight = Math.max(maxRight, elRight);
+//     //     maxHeighRight[height.length - 1 - i] = maxRight;
+//     // };
+
+//     // let sum = 0;
+//     // for (let i = 0; i < height.length; i++) {
+//     //     sum += Math.max(Math.min(maxHeightLeft[i], maxHeighRight[i]) - height[i], 0);
+//     // };
+//     // return sum;
+
+//     ///////////////////////// Optimal solution
+//     let left = 0;
+//     let right = height.length - 1;
+//     let maxLeft = 0;
+//     let maxRight = 0;
+//     let trappedWater = 0;
+
+//     while (left <= right) {
+//         if (height[left] <= height[right]) {
+//             if (height[left] >= maxLeft) maxLeft = height[left];
+//             else trappedWater += maxLeft - height[left];
+//             left++;
+//         } else {
+//             if (height[right] >= maxRight) maxRight = height[right];
+//             else trappedWater += maxRight - height[right];
+//             right--;
+//         }
+//     }
+//     return trappedWater;
+// };
+
 // # 15. 2025.05.20 - [3:22:30](https://www.youtube.com/watch?v=T0u5nwSA0w0&t=12150s) | LeetCode 121 - Best Time To Buy And Sell Stocks
-/**
- * @param {number[]} prices
- * @return {number}
- */
-var maxProfit = function (prices) {
-    let profit = 0;
-    let min = prices[0];
-    for (let i = 0; i < prices.length; i++) {
-        const price = prices[i];
-        if (price < min) min = price;
-        profit = Math.max(profit, price - min);
-    }
-    return profit;
-};
+// /**
+//  * @param {number[]} prices
+//  * @return {number}
+//  */
+// var maxProfit = function (prices) {
+//     let profit = 0;
+//     let min = prices[0];
+//     for (let i = 0; i < prices.length; i++) {
+//         const price = prices[i];
+//         if (price < min) min = price;
+//         profit = Math.max(profit, price - min);
+//     }
+//     return profit;
+// };
