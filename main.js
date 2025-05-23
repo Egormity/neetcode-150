@@ -320,3 +320,28 @@ var isPalindrome = function (s) {
 //     }
 //     return profit;
 // };
+
+// # 16. 2025.05.23 - [3:32:00](https://www.youtube.com/watch?v=T0u5nwSA0w0&t=9120s) - LeetCode 3 - Longest Substring Wihout Repeating Characters - medium
+// /**
+//  * @param {string} s
+//  * @return {number}
+//  */
+// var lengthOfLongestSubstring = function (s) {
+//     let result = 0,
+//         leftI = 0,
+//         rightI = 0;
+//     const dict = {};
+//     while (rightI < s.length) {
+//         const leftChar = s[leftI],
+//             rightChar = s[rightI];
+//         if (dict[rightChar]) {
+//             delete dict[leftChar];
+//             leftI++;
+//             continue;
+//         }
+//         dict[rightChar] = true;
+//         result = Math.max(result, rightI - leftI + 1);
+//         rightI++;
+//     }
+//     return result;
+// };
