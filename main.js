@@ -155,28 +155,28 @@
  * @return {boolean}
  */
 var isPalindrome = function (s) {
-    // 1.
-    // const sFromatted = s.replace(/[^a-zA-Z0-9]/g, "").toLowerCase();
-    // return sFromatted === sFromatted.split("").reverse().join("");
-    // 2.
-    // const sFromatted = s.replace(/[^a-zA-Z0-9]/g, "").toLowerCase();
-    // for (let i = 0; i < sFromatted.length; i++) {
-    //     if (sFromatted[i] !== sFromatted[sFromatted.length - 1 - i]) return false;
-    // }
-    // return true;
-    // 3.
-    // const alphabet = "abcdefghijklmnopqrstuvwxyz1234567890";
-    // let leftI = 0;
-    // let rightI = s.length - 1;
-    // while (leftI < rightI) {
-    //     while (!alphabet.includes(s[leftI].toLowerCase()) && leftI < rightI) leftI++;
-    //     while (!alphabet.includes(s[rightI].toLowerCase()) && leftI < rightI) rightI--;
-    //     //
-    //     if (s[leftI].toLowerCase() !== s[rightI].toLowerCase()) return false;
-    //     leftI++;
-    //     rightI--;
-    // }
-    // return true;
+	// 1.
+	// const sFromatted = s.replace(/[^a-zA-Z0-9]/g, "").toLowerCase();
+	// return sFromatted === sFromatted.split("").reverse().join("");
+	// 2.
+	// const sFromatted = s.replace(/[^a-zA-Z0-9]/g, "").toLowerCase();
+	// for (let i = 0; i < sFromatted.length; i++) {
+	//     if (sFromatted[i] !== sFromatted[sFromatted.length - 1 - i]) return false;
+	// }
+	// return true;
+	// 3.
+	// const alphabet = "abcdefghijklmnopqrstuvwxyz1234567890";
+	// let leftI = 0;
+	// let rightI = s.length - 1;
+	// while (leftI < rightI) {
+	//     while (!alphabet.includes(s[leftI].toLowerCase()) && leftI < rightI) leftI++;
+	//     while (!alphabet.includes(s[rightI].toLowerCase()) && leftI < rightI) rightI--;
+	//     //
+	//     if (s[leftI].toLowerCase() !== s[rightI].toLowerCase()) return false;
+	//     leftI++;
+	//     rightI--;
+	// }
+	// return true;
 };
 // console.log(isPalindrome("aaaaa"));
 
@@ -345,3 +345,46 @@ var isPalindrome = function (s) {
 //     }
 //     return result;
 // };
+
+//
+// /**
+//  * @param {string} s
+//  * @param {number} k
+//  * @return {number}
+//  */
+// var characterReplacement = function (s, k) {
+// My solution
+// let max = 0,
+//     left = 0,
+//     right = 0;
+// const hash = {};
+// while (left < s.length) {
+//     const charLeft = s[left],
+//         charRight = s[right],
+//         len = hash[charLeft] || 0;
+//     if (right - left - len > k || right >= s.length) {
+//         hash[charLeft] && hash[charLeft]--;
+//         left++;
+//     } else {
+//         hash[charRight] = hash[charRight] ? hash[charRight] + 1 : 1;
+//         right++;
+//     }
+//     max = Math.max(max, len);
+// }
+// return Math.min(s.length, max + k);
+
+// Optimal solution
+//     let left = 0,
+//         maxCount = 0;
+//     const hash = {};
+
+//     for (let right = 0; right < s.length; right++) {
+//         const char = s[right];
+//         hash[char] = (hash[char] || 0) + 1;
+//         maxCount = Math.max(maxCount, hash[char]);
+//         if (right - left + 1 - maxCount > k) hash[s[left++]]--;
+//     }
+
+//     return s.length - left;
+// };
+// console.log(characterReplacement("AAAA", 0));
