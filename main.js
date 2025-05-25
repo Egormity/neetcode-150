@@ -346,7 +346,7 @@ var isPalindrome = function (s) {
 //     return result;
 // };
 
-//
+// # 17. 2025.05.24 - [3:43:06](https://www.youtube.com/watch?v=T0u5nwSA0w0&t=13386s) | LeetCode 424 - Longest Repeating Character Replacement - Medium
 // /**
 //  * @param {string} s
 //  * @param {number} k
@@ -388,3 +388,26 @@ var isPalindrome = function (s) {
 //     return s.length - left;
 // };
 // console.log(characterReplacement("AAAA", 0));
+
+// # 2025.05.25 - [4:04:16](https://www.youtube.com/watch?v=T0u5nwSA0w0&t=14656s) - | LeetCode 567 - Permutation in String - Medium
+/**
+ * @param {string} s1
+ * @param {string} s2
+ * @return {boolean}
+ */
+var checkInclusion = function (s1, s2) {
+	// My solution
+	// const hashInitial = s1.split("").reduce((acc, cur) => ({ ...acc, [cur]: (acc[cur] || 0) + 1 }), {});
+	// const hash = { ...hashInitial };
+	// for (let j = 0; j < s2.length; j++) {
+	// 	const i = j - s1.length;
+	// 	const leftChar = i >= 0 ? s2[i] : null;
+	// 	const rightChar = s2[j];
+	// 	if (hash[leftChar] !== undefined && hash[leftChar] < hashInitial[leftChar]) hash[leftChar]++;
+	// 	if (hash[rightChar] !== undefined) hash[rightChar]--;
+	// 	if (Object.values(hash).every(el => el <= 0)) return true;
+	// }
+	// return false;
+	// Optimal solution
+};
+console.log(checkInclusion("adc", "dcda"));
