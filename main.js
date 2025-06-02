@@ -390,24 +390,59 @@ var isPalindrome = function (s) {
 // console.log(characterReplacement("AAAA", 0));
 
 // # 2025.05.25 - [4:04:16](https://www.youtube.com/watch?v=T0u5nwSA0w0&t=14656s) - | LeetCode 567 - Permutation in String - Medium
-/**
- * @param {string} s1
- * @param {string} s2
- * @return {boolean}
- */
-var checkInclusion = function (s1, s2) {
-	// My solution
-	// const hashInitial = s1.split("").reduce((acc, cur) => ({ ...acc, [cur]: (acc[cur] || 0) + 1 }), {});
-	// const hash = { ...hashInitial };
-	// for (let j = 0; j < s2.length; j++) {
-	// 	const i = j - s1.length;
-	// 	const leftChar = i >= 0 ? s2[i] : null;
-	// 	const rightChar = s2[j];
-	// 	if (hash[leftChar] !== undefined && hash[leftChar] < hashInitial[leftChar]) hash[leftChar]++;
-	// 	if (hash[rightChar] !== undefined) hash[rightChar]--;
-	// 	if (Object.values(hash).every(el => el <= 0)) return true;
-	// }
-	// return false;
-	// Optimal solution
-};
-console.log(checkInclusion("adc", "dcda"));
+// /**
+//  * @param {string} s1
+//  * @param {string} s2
+//  * @return {boolean}
+//  */
+// var checkInclusion = function (s1, s2) {
+// 	// My solution
+// 	// const hashInitial = s1.split("").reduce((acc, cur) => ({ ...acc, [cur]: (acc[cur] || 0) + 1 }), {});
+// 	// const hash = { ...hashInitial };
+// 	// for (let j = 0; j < s2.length; j++) {
+// 	// 	const i = j - s1.length;
+// 	// 	const leftChar = i >= 0 ? s2[i] : null;
+// 	// 	const rightChar = s2[j];
+// 	// 	if (hash[leftChar] !== undefined && hash[leftChar] < hashInitial[leftChar]) hash[leftChar]++;
+// 	// 	if (hash[rightChar] !== undefined) hash[rightChar]--;
+// 	// 	if (Object.values(hash).every(el => el <= 0)) return true;
+// 	// }
+// 	// return false;
+
+// 	// Optimal solution
+// 	if (s1.length > s2.length) return false;
+
+// 	const count = new Array(26).fill(0);
+// 	const window = new Array(26).fill(0);
+
+// 	// Initialize the count array
+// 	for (let i = 0; i < s1.length; i++) {
+// 		count[s1.charCodeAt(i) - "a".charCodeAt(0)]++;
+// 		window[s2.charCodeAt(i) - "a".charCodeAt(0)]++;
+// 	}
+
+// 	let matches = 0;
+// 	for (let i = 0; i < 26; i++) {
+// 		if (count[i] === window[i]) matches++;
+// 	}
+
+// 	for (let i = s1.length; i < s2.length; i++) {
+// 		if (matches === 26) return true;
+
+// 		const leftChar = s2.charCodeAt(i - s1.length) - "a".charCodeAt(0);
+// 		const rightChar = s2.charCodeAt(i) - "a".charCodeAt(0);
+
+// 		// Remove left character from window
+// 		if (window[leftChar] === count[leftChar]) matches--;
+// 		window[leftChar]--;
+// 		if (window[leftChar] === count[leftChar]) matches++;
+
+// 		// Add right character to window
+// 		if (window[rightChar] === count[rightChar]) matches--;
+// 		window[rightChar]++;
+// 		if (window[rightChar] === count[rightChar]) matches++;
+// 	}
+
+// 	return matches === 26;
+// };
+// console.log(checkInclusion("adc", "dcda"));
