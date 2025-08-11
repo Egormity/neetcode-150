@@ -446,3 +446,26 @@ var isPalindrome = function (s) {
 // 	return matches === 26;
 // };
 // console.log(checkInclusion("adc", "dcda"));
+
+// # 20. 2025.08.11 - [4:40:19](https://www.youtube.com/watch?v=T0u5nwSA0w0&t=16819s) | Leetcode 239 - Sliding Window Maximum - Hard
+// /**
+//  * @param {number[]} nums
+//  * @param {number} k
+//  * @return {number[]}
+//  */
+// var maxSlidingWindow = function (nums, k) {
+// 	const result = [];
+// 	const dq = [];
+
+// 	for (let endI = 0; endI < nums.length; endI++) {
+// 		const startI = endI - (k - 1);
+
+// 		while (dq.length > 0 && dq[0] < startI) dq.shift();
+// 		while (dq.length > 0 && nums[dq[dq.length - 1]] < nums[endI]) dq.pop();
+
+// 		dq.push(endI);
+// 		if (startI >= 0) result.push(nums[dq[0]]);
+// 	}
+// 	return result;
+// };
+// console.log(maxSlidingWindow([1, 3, -1, -3, 5, 3, 6, 7], 3));
