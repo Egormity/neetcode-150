@@ -469,3 +469,27 @@ var isPalindrome = function (s) {
 // 	return result;
 // };
 // console.log(maxSlidingWindow([1, 3, -1, -3, 5, 3, 6, 7], 3));
+
+// // # 20. 2025.08.11 - [4:59:45](https://www.youtube.com/watch?v=T0u5nwSA0w0&t=17985s&pp=0gcJCTAAlc8ueATH) | Leetcode 20 - Valid Parantheses - Easy
+// /**
+//  * @param {string} s
+//  * @return {boolean}
+//  */
+// var isValid = function (s) {
+// 	if (s.length < 2) return false;
+// 	const stack = [];
+// 	const dic = {
+// 		"]": "[",
+// 		")": "(",
+// 		"}": "{",
+// 	};
+// 	for (let i = 0; i < s.length; i++) {
+// 		const el = s[i];
+// 		if ("[({".includes(el)) {
+// 			stack.push(el);
+// 			continue;
+// 		}
+// 		if (stack.pop() !== dic[el]) return false;
+// 	}
+// 	return stack.length === 0;
+// };
