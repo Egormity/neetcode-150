@@ -493,3 +493,54 @@ var isPalindrome = function (s) {
 // 	}
 // 	return stack.length === 0;
 // };
+
+// // # 20. 2025.10.04 - [5:11:39](https://www.youtube.com/watch?v=T0u5nwSA0w0&t=18699s) | Leetcode 155 -Min Stack - Easy
+// class Node {
+// 	constructor(value, min, next) {
+// 		this.value = value;
+// 		this.min = min;
+// 		this.next = next;
+// 	}
+// }
+
+// //
+// var MinStack = function () {};
+
+// /**
+//  * @param {number} val
+//  * @return {void}
+//  */
+// MinStack.prototype.push = function (val) {
+// 	if (!this.head) this.head = new Node(val, val, null);
+// 	else this.head = new Node(val, Math.min(val, this.head.min), this.head);
+// };
+
+// /**
+//  * @return {void}
+//  */
+// MinStack.prototype.pop = function () {
+// 	this.head = this.head.next;
+// };
+
+// /**
+//  * @return {number}
+//  */
+// MinStack.prototype.top = function () {
+// 	return this.head.value;
+// };
+
+// /**
+//  * @return {number}
+//  */
+// MinStack.prototype.getMin = function () {
+// 	return this.head.min;
+// };
+
+// /**
+//  * Your MinStack object will be instantiated and called as such:
+//  * var obj = new MinStack()
+//  * obj.push(val)
+//  * obj.pop()
+//  * var param_3 = obj.top()
+//  * var param_4 = obj.getMin()
+//  */
