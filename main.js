@@ -544,3 +544,28 @@ var isPalindrome = function (s) {
 //  * var param_3 = obj.top()
 //  * var param_4 = obj.getMin()
 //  */
+
+// # 22. 2025.10.05 - [5:20:43](https://www.youtube.com/watch?v=T0u5nwSA0w0&t=19243s) | Leetcode 150.- Evaluate Reverse Polish Notation - Medium
+// /**
+//  * @param {string[]} tokens
+//  * @return {number}
+//  */
+// var evalRPN = function (tokens) {
+// 	const stack = [];
+// 	for (let i = 0; i < tokens.length; i++) {
+// 		const token = tokens[i];
+// 		if ("+-*/".includes(token)) {
+// 			const num2 = stack.pop();
+// 			const num1 = stack.pop();
+// 			const newNum = (() => {
+// 				if (token === "+") return num1 + num2;
+// 				if (token === "-") return num1 - num2;
+// 				if (token === "*") return num1 * num2;
+// 				if (token === "/") return Math.trunc(num1 / num2);
+// 			})();
+// 			result = newNum;
+// 			stack.push(newNum);
+// 		} else stack.push(+token);
+// 	}
+// 	return stack[0];
+// };
