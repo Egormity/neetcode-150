@@ -569,3 +569,25 @@ var isPalindrome = function (s) {
 // 	}
 // 	return stack[0];
 // };
+
+// # 23. 2025.10.06 - [5:30:10](https://www.youtube.com/watch?v=T0u5nwSA0w0&t=19810s) | Leetcode 22 - Generate Parentheses - Medium
+// /**
+//  * @param {number} n
+//  * @return {string[]}
+//  */
+// var generateParenthesis = function (n) {
+// 	const result = [];
+// 	const helper = (n, curStr = "(", newParenthesis = "", numLeftParenthesis = 1, numRightParenthesis = 0) => {
+// 		const newCurStr = curStr + newParenthesis;
+// 		if (newCurStr.length === n * 2) {
+// 			result.push(newCurStr);
+// 			return;
+// 		}
+// 		if (numRightParenthesis < numLeftParenthesis)
+// 			helper(n, newCurStr, ")", numLeftParenthesis, numRightParenthesis + 1);
+// 		if (numLeftParenthesis < n) helper(n, newCurStr, "(", numLeftParenthesis + 1, numRightParenthesis);
+// 	};
+// 	helper(n);
+// 	return result;
+// };
+// console.log(generateParenthesis(4));
